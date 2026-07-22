@@ -1,0 +1,51 @@
+@use "@/app/styles/variables" as *;
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: $color-gold;
+  margin-bottom: $spacing-sm;
+}
+
+.title {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-sm;
+}
+
+.description {
+  color: $color-text-muted;
+  margin-bottom: $spacing-md;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  list-style: none;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-weight: 600;
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  color: $color-gold;
+  background: rgba($color-gold, 0.12);
+  border-radius: 50%;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+}

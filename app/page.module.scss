@@ -1,0 +1,336 @@
+@use "./styles/variables" as *;
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scrollCue {
+  position: absolute;
+  left: 50%;
+  bottom: $spacing-lg;
+  z-index: 1;
+  transform: translateX(-50%);
+  display: inline-flex;
+  color: $color-gold-pale;
+  font-size: 1.5rem;
+  animation: bounce 2.4s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba($color-navy, 0.55) 0%,
+    rgba($color-navy, 0.85) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+}
+
+.heroEyebrow {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+}
+
+.heroHeading {
+  font-size: $font-size-2xl;
+  color: $color-text-inverse;
+  max-width: 40rem;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.heroTagline {
+  font-family: $font-accent;
+  font-size: $font-size-md;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-gold-pale;
+}
+
+.heroSupport {
+  max-width: 34rem;
+  color: rgba($color-white, 0.85);
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-top: $spacing-sm;
+}
+
+.badgeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  text-align: center;
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $color-navy;
+}
+
+.badgeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 1.5px solid $color-gold;
+  background: rgba($color-gold, 0.08);
+  font-size: 1.5rem;
+  color: $color-gold;
+}
+
+.sectionEyebrow {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.sectionHeading {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-xl;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+.introHeading {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-md;
+}
+
+.introText {
+  color: $color-text-muted;
+  margin-bottom: $spacing-md;
+}
+
+.strengthList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  list-style: none;
+  margin-bottom: $spacing-lg;
+}
+
+.strengthItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-weight: 600;
+}
+
+.strengthIcon {
+  flex-shrink: 0;
+  color: $color-gold;
+  background: rgba($color-gold, 0.12);
+  border-radius: 50%;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+}
+
+.serviceIconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-top: $spacing-sm;
+  border-radius: 50%;
+  background: rgba($color-gold, 0.1);
+  color: $color-gold;
+  font-size: 1.5rem;
+}
+
+.serviceTitle {
+  font-size: $font-size-lg;
+}
+
+.serviceDescription {
+  color: $color-text-muted;
+  flex-grow: 1;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.processCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+}
+
+.processNumber {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: rgba($color-gold, 0.35);
+}
+
+.processIcon {
+  font-size: 1.75rem;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.processTitle {
+  font-size: $font-size-md;
+}
+
+.processDescription {
+  color: $color-text-muted;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.quoteBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.quoteText {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  font-style: italic;
+  color: $color-text-inverse;
+  line-height: 1.5;
+
+  &::before {
+    content: "“";
+  }
+
+  &::after {
+    content: "”";
+  }
+}
+
+.quoteAttribution {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-gold;
+}

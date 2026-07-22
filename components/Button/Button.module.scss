@@ -1,0 +1,83 @@
+@use "@/app/styles/variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  font-family: $font-accent;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color $transition-base,
+    color $transition-base,
+    border-color $transition-base,
+    transform $transition-base,
+    box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+  }
+}
+
+.md {
+  padding: 0.75rem 1.75rem;
+  font-size: $font-size-sm;
+}
+
+.lg {
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+}
+
+.primary {
+  background: $color-gold;
+  color: $color-navy;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    background: $color-gold-light;
+    box-shadow: $shadow-md;
+  }
+}
+
+.secondary {
+  background: transparent;
+  border-color: $color-gold;
+  color: $color-gold;
+
+  &:hover {
+    background: rgba($color-gold, 0.1);
+  }
+}
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: $font-body;
+  font-weight: 600;
+
+  &:hover {
+    transform: none;
+    text-decoration: underline;
+  }
+}

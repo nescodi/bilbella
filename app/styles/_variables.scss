@@ -1,0 +1,48 @@
+$color-navy: #0d1b2e;
+$color-navy-light: #1c3454;
+$color-gold: #a3831f;
+$color-gold-light: #cbb05d;
+$color-gold-pale: #f9e5a2;
+$color-taupe: #8a8672;
+
+$color-white: #ffffff;
+$color-cream: #f8f6f0;
+$color-black: #0a0a0a;
+
+$color-text: $color-navy;
+$color-text-muted: $color-taupe;
+$color-text-inverse: $color-white;
+$color-background: $color-white;
+$color-background-alt: $color-cream;
+$color-border: rgba($color-navy, 0.12);
+$color-error: #b3261e;
+
+$font-heading: var(--font-heading), Georgia, serif;
+$font-accent: var(--font-accent), Helvetica, Arial, sans-serif;
+$font-body: var(--font-body), Helvetica, Arial, sans-serif;
+
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.25rem;
+$font-size-lg: 1.75rem;
+$font-size-xl: 2.5rem;
+$font-size-2xl: 3.5rem;
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2.5rem;
+$spacing-xl: 4rem;
+$spacing-2xl: 6rem;
+
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$shadow-sm: 0 1px 3px rgba($color-black, 0.08);
+$shadow-md: 0 4px 12px rgba($color-black, 0.12);
+$transition-base: 0.2s ease;

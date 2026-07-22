@@ -1,0 +1,105 @@
+@use "@/app/styles/variables" as *;
+
+.footer {
+  background: $color-navy;
+  color: $color-text-inverse;
+  border-top: 3px solid $color-gold;
+}
+
+.inner {
+  max-width: $breakpoint-xl;
+  margin: 0 auto;
+  padding: $spacing-2xl $spacing-lg $spacing-xl;
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1.4fr 1fr 1.4fr;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.tagline {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-taupe;
+  max-width: 320px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.heading {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.link {
+  font-size: $font-size-base;
+  color: $color-text-inverse;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-gold-pale;
+  }
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-xs;
+  font-size: $font-size-base;
+  color: $color-text-inverse;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    color: $color-gold;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: $spacing-sm;
+  grid-column: 1 / -1;
+}
+
+.socialLink {
+  color: $color-gold;
+}
+
+.bottomBar {
+  border-top: 1px solid rgba($color-white, 0.12);
+  padding: $spacing-md $spacing-lg;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm $spacing-lg;
+  font-size: $font-size-sm;
+  color: $color-taupe;
+}
+
+.legalLink {
+  color: $color-taupe;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-gold-pale;
+  }
+}

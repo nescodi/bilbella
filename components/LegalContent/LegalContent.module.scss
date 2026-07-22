@@ -1,0 +1,41 @@
+@use "@/app/styles/variables" as *;
+
+.content {
+  max-width: 42rem;
+  margin: 0 auto;
+
+  h2 {
+    font-size: $font-size-lg;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-sm;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  p,
+  li {
+    color: $color-text-muted;
+    margin-bottom: $spacing-sm;
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-left: $spacing-md;
+  }
+
+  a {
+    color: $color-gold;
+    text-decoration: underline;
+  }
+}
+
+.updated {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $spacing-lg;
+}

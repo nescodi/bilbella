@@ -1,0 +1,91 @@
+@use "@/app/styles/variables" as *;
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.sectionHeading {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-xl;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.storyHeading {
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-md;
+}
+
+.storyParagraph {
+  color: $color-text-muted;
+  margin-bottom: $spacing-md;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-white;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+}
+
+.valueIcon {
+  font-size: 2rem;
+  color: $color-gold;
+  margin-bottom: $spacing-xs;
+}
+
+.valueTitle {
+  font-size: $font-size-md;
+}
+
+.valueDescription {
+  color: $color-text-muted;
+}

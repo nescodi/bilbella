@@ -1,0 +1,20 @@
+@use "@/app/styles/variables" as *;
+
+.section {
+  padding: $spacing-2xl 0;
+}
+
+.light {
+  background: $color-background;
+  color: $color-text;
+}
+
+.dark {
+  background: $color-navy;
+  color: $color-text-inverse;
+}
+
+.alt {
+  background: $color-background-alt;
+  color: $color-text;
+}

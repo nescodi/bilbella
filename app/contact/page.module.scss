@@ -1,0 +1,43 @@
+@use "@/app/styles/variables" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.detailsHeading {
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-xs;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  color: $color-text;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    color: $color-gold;
+  }
+}
+
+.map {
+  margin-top: $spacing-sm;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: $radius-md;
+}

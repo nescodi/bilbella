@@ -1,0 +1,130 @@
+@use "@/app/styles/variables" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: $color-navy;
+  transition: box-shadow $transition-base;
+}
+
+.scrolled {
+  box-shadow: $shadow-md;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  max-width: $breakpoint-xl;
+  margin: 0 auto;
+  padding: $spacing-md $spacing-lg;
+  transition: padding $transition-base;
+}
+
+.scrolled .inner {
+  padding: $spacing-sm $spacing-lg;
+}
+
+.nav {
+  display: none;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+  }
+}
+
+.navLink {
+  position: relative;
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-text-inverse;
+  padding: $spacing-xs 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: $color-gold;
+    transition: width $transition-base;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.navLinkActive {
+  color: $color-gold-pale;
+
+  &::after {
+    width: 100%;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.phone {
+  display: none;
+  align-items: center;
+  gap: $spacing-xs;
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-gold;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+  }
+}
+
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: transparent;
+  color: $color-text-inverse;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: $color-navy-light;
+
+  @media (min-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+.mobileNavLink {
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-accent;
+  font-size: $font-size-base;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-text-inverse;
+  border-top: 1px solid rgba($color-white, 0.08);
+}

@@ -1,0 +1,55 @@
+@use "@/app/styles/variables" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-background-alt;
+  box-shadow: $shadow-sm;
+}
+
+.formIntro {
+  color: $color-text-muted;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.label {
+  font-family: $font-accent;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-navy;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem $spacing-sm;
+  border: 1.5px solid $color-border;
+  border-radius: $radius-sm;
+  background: $color-white;
+  color: $color-text;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  transition:
+    border-color $transition-base,
+    box-shadow $transition-base;
+
+  &:focus {
+    outline: none;
+    border-color: $color-gold;
+    box-shadow: 0 0 0 3px rgba($color-gold, 0.25);
+  }
+}
+
+.error {
+  font-size: $font-size-sm;
+  color: $color-error;
+}
