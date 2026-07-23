@@ -108,14 +108,29 @@
 }
 
 .mobileNav {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
   background: $color-navy-light;
+  transition: grid-template-rows 0.3s ease;
 
   @media (min-width: $breakpoint-lg) {
     display: none;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.mobileNavOpen {
+  grid-template-rows: 1fr;
+}
+
+.mobileNavInner {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobileNavLink {

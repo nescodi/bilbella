@@ -1,0 +1,35 @@
+.fadeIn {
+  opacity: 1;
+}
+
+.animate {
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.none {
+  transform: none;
+}
+
+.pending {
+  opacity: 0;
+}
+
+.up.pending {
+  transform: translateY(24px);
+}
+
+.left.pending {
+  transform: translateX(-24px);
+}
+
+.right.pending {
+  transform: translateX(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    transition: none;
+  }
+}

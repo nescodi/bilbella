@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiPhone, FiX } from "react-icons/fi";
 import Logo from "@/components/Logo/Logo";
 import { company, navLinks } from "@/components/config";
@@ -64,32 +63,32 @@ export default function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            className={styles.mobileNav}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+      <nav
+        className={`${styles.mobileNav} ${menuOpen ? styles.mobileNavOpen : ""}`}
+        aria-hidden={!menuOpen}
+      >
+        <div className={styles.mobileNavInner}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              tabIndex={menuOpen ? undefined : -1}
+              className={`${styles.mobileNavLink} ${
+                pathname === link.href ? styles.navLinkActive : ""
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={company.phoneHref}
+            tabIndex={menuOpen ? undefined : -1}
+            className={styles.mobileNavLink}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.mobileNavLink} ${
-                  pathname === link.href ? styles.navLinkActive : ""
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a href={company.phoneHref} className={styles.mobileNavLink}>
-              {company.phone}
-            </a>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+            {company.phone}
+          </a>
+        </div>
+      </nav>
     </header>
   );
 }
