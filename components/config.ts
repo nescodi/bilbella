@@ -12,7 +12,7 @@ export const company = {
   name: "Bilbella",
   subtitle: "Security Network",
   fullName: "Bilbella Security Network",
-  siteUrl: "https://www.bilbellasecurity.com.ng",
+  siteUrl: "https://bilbellasecurity.com.ng",
   tagline: "Protection · Surveillance · Risk Advisory",
   taglinePillars: ["Protection", "Surveillance", "Risk Advisory"],
   address: "Obiogbolo Dimrose by Timaya Street, House 13, Yenagoa",
