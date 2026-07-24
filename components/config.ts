@@ -8,6 +8,13 @@ type SocialLink = {
   href: string;
 };
 
+type Leader = {
+  name: string;
+  title: string;
+  bio: string;
+  image?: string;
+};
+
 export const company = {
   name: "Bilbella",
   subtitle: "Security Network",
@@ -40,3 +47,18 @@ export const legalLinks: NavLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [];
+
+export const leadership: Leader[] = [
+  {
+    image: "/images/chairman.jpg",
+    name: "Ebitimi Stephen Akassa",
+    title: "Chairman",
+    bio: "Ebitimi Stephen Akassa leads Bilbella Security Network with a commitment to professionalism, transparency, and excellence. His leadership focuses on building client trust, strong partnerships, and delivering reliable protection, surveillance, and risk advisory services that create lasting impact.Ebitimi Stephen Akassa leads Bilbella Security Network with a commitment to professionalism, transparency, and excellence. His leadership focuses on building client trust, strong partnerships, and delivering reliable protection, surveillance, and risk advisory services that create lasting impact.",
+  },
+  {
+    image: "/images/director-operations.jpeg",
+    name: "Lt Col Nkana-Ete Udoh Efik (Rtd)",
+    title: "Director of Operations",
+    bio: "A retired Lieutenant Colonel, Lt Col Udoh Efik brings a wealth of hands-on security experience across every terrain to Bilbella's operations — leading our land and marine security teams with the discipline and field expertise built over a distinguished career.",
+  },
+];

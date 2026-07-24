@@ -196,8 +196,8 @@
   grid-template-columns: 1fr;
   gap: $spacing-xl;
 
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

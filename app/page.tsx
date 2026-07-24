@@ -9,6 +9,7 @@ import {
   FiShield,
   FiVideo,
 } from "react-icons/fi";
+import { FaAnchor } from "react-icons/fa";
 import Button from "@/components/Button/Button";
 import Section from "@/components/Section/Section";
 import Container from "@/components/Container/Container";
@@ -26,6 +27,14 @@ const services = [
     image: "/images/event.png",
     description:
       "Trained personnel delivering close protection, event security, and armed or unarmed guarding tailored to your risk profile.",
+  },
+  {
+    title: "Marine Security",
+    slug: "marine-security",
+    image: "/images/marine.png",
+    icon: FaAnchor,
+    description:
+      "Vessel escorts, waterway patrol, and maritime risk advisory — extending our protection onto the water.",
   },
   {
     title: "Surveillance",
@@ -134,8 +143,9 @@ export default function Home() {
           <FadeIn delay={0.3}>
             <p className={styles.heroSupport}>
               Trained personnel, modern surveillance, and clear-eyed risk
-              advisory — brought together under one dependable name, so
-              protecting what matters to you is never left to chance.
+              advisory — on land and at sea — brought together under one
+              dependable name, so protecting what matters to you is never left
+              to chance.
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>

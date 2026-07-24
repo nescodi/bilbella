@@ -13,12 +13,12 @@ import Section from "@/components/Section/Section";
 import ImagePlaceholder from "@/components/ImagePlaceholder/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn/FadeIn";
 import CtaBand from "@/components/CtaBand/CtaBand";
-import { company } from "@/components/config";
+import { company, leadership } from "@/components/config";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `Learn about ${company.fullName} — a trusted security partner in ${company.addressLocality}, ${company.addressRegion}, providing licensed protection, surveillance, and risk advisory services.`,
+  description: `Learn about ${company.fullName} — a trusted security partner in ${company.addressLocality}, ${company.addressRegion}, providing licensed protection, surveillance, risk advisory, and marine security services.`,
 };
 
 const values = [
@@ -149,6 +149,35 @@ export default function AboutPage() {
                 <Icon className={styles.valueIcon} />
                 <h3 className={styles.valueTitle}>{title}</h3>
                 <p className={styles.valueDescription}>{description}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="alt">
+        <FadeIn>
+          <p className={styles.eyebrow}>Our Leadership</p>
+          <h2 className={styles.sectionHeading}>
+            Meet the Team Behind {company.name}
+          </h2>
+        </FadeIn>
+
+        <div className={styles.leadershipGrid}>
+          {leadership.map(({ name, title, bio, image }, i) => (
+            <FadeIn key={name} delay={i * 0.1}>
+              <div className={styles.leaderCard}>
+                <ImagePlaceholder
+                  label={`${name} — Portrait`}
+                  ratio="1 / 1"
+                  className={styles.leaderPortrait}
+                  src={image}
+                />
+                <div>
+                  <h3 className={styles.leaderName}>{name}</h3>
+                  <p className={styles.leaderTitle}>{title}</p>
+                  <p className={styles.leaderBio}>{bio}</p>
+                </div>
               </div>
             </FadeIn>
           ))}

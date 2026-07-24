@@ -23,7 +23,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const description = `${company.fullName} — ${company.tagline}. Licensed protection, surveillance, and risk advisory serving ${company.addressLocality}, ${company.addressRegion}.`;
+const description = `${company.fullName} — ${company.tagline}. Licensed protection, surveillance, risk advisory, and marine security serving ${company.addressLocality}, ${company.addressRegion}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(company.siteUrl),
